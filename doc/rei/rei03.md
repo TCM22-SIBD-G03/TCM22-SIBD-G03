@@ -8,7 +8,22 @@ Exemplo de inserção de uma imagem:
 
 Modelo E/A
 
-NOTA: Cada entidade-tipo e cada associação devem ter um pequeno texto – um ou dois parágrafos – para descrever esse elemento do modelo e os seus atributos)
+### Entidades
+
+1. Cliente
+2. Fornecedor
+3. Produto
+4. Funcionário
+5. Formação
+
+### Associações
+
+1. atende
+2. fornece
+3. negoceia
+4. armazena
+5. exerce
+
 
 ## Regras de negócio adicionais (Restrições)
 _(Apresentar uma lista detalhada das regras e restrições não possíveis de representar no modelo E/A, que visam a manutenção da consistência e integridade da modelação do problema)_
