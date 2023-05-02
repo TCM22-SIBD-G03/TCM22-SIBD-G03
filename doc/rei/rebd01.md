@@ -29,7 +29,7 @@ fontsize:
 
 ## Descrição do trabalho
 
-O trabalho consiste na especificação e desenvolvimento de um sistema para a organização da nossa mercearia que é constituída pelas entidades (Cliente, Fornecedores, Funcionários) que são:
+O trabalho consiste na especificação e desenvolvimento de um sistema para a organização da nossa mercearia que é constituída pelas entidades (Cliente, Fornecedores, Funcionários, Produtos) que são:
 
 O Cliente tem uma forma de identificação, como vários clientes não podem ter o mesmo número de identificação, o Cartão de identificação vem com o número de cliente, morada e o número de telefone e a suposta foto do cliente, idade. Temos também o histórico de compras dos clientes para fins de *marketing*.
 
@@ -108,7 +108,15 @@ Entidade Funcionário:
 - Número de telefone
 - Área de trabalho (Caixa, Repositor, Atendente)
 - Formação/Experiência (se aplicável)
-- Turno
+
+
+Entidade Produto:
+
+- Nome
+- Preço
+- Origem
+- *Código de Barras* (identificador único)
+
 
 
 Com este modelo de dados, podemos informatizar o sistema de informação da mercearia e gerir facilmente as informações dos clientes, fornecedores e funcionários, bem como as transações financeiras e compras de mercadorias.
@@ -123,5 +131,5 @@ Um dos problemas que é possível ocorrer durante o processo de criação são
 
 ---
 
-[< Previous](rei00.md) | [^ Main](https://github.com/exemploTrabalho/reportSIBD/) | [Next >](rei02.md)
+[< Previous](rei00.md) | [^ Main](https://github.com/TCM22-SIBD-G03/TCM22-SIBD-G03) | [Next >](rei02.md)
 :--- | :---: | ---: 
