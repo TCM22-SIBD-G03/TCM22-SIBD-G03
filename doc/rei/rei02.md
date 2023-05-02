@@ -5,5 +5,5 @@ A nossa Mercearia vai utilizar a base de dados para o número de funcionário qu
 _(Descrever os tipos de utilizadores (actores) do sistema de informação e as funcionalidade (casos de uso) a que estes terão acesso)_
 
 ---
-[< Previous](rei01.md) | [^ Main](https://github.com/exemploTrabalho/reportSIBD/) | [Next >](rei03.md)
+[< Previous](rei01.md) | [^ Main](https://github.com/TCM22-SIBD-G03/TCM22-SIBD-G03) | [Next >](rei03.md)
 :--- | :---: | ---: 

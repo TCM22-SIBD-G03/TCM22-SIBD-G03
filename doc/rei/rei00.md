@@ -17,5 +17,5 @@
 
 ---
 
-< Previous | [^ Main](https://github.com/exemploTrabalho/reportSIBD/) | [Next >](rebd01.md)
+< Previous | [^ Main](https://github.com/TCM22-SIBD-G03/TCM22-SIBD-G03) | [Next >](rei01.md)
 :--- | :---: | ---: 
