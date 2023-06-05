@@ -2,24 +2,136 @@
 
 ## Relações
 
-1. Cliente (ID_cliente, nome, morada, telefone, idade, forma_pagamento)
-2. Fornecedor (ID_fornecedor, nome, contacto_especifico, loja_armazem, endereco_eletronico)
-3. Funcionario (ID_funcionario, nome, morada, telefone, area_trabalho)
-4. Produto (codigo_barras, nome, preco, origem)
-5. Atendimento (ID_atendimento, ID_cliente, ID_funcionario)
-6. Fornecimento (ID_fornecimento, ID_fornecedor, codigo_barras)
-7. Negociacao (ID_negociacao, ID_fornecedor, ID_funcionario)
-8. Armazenamento (ID_armazenamento, ID_funcionario, codigo_barras)
-9. Exercicio (ID_exercicio, ID_funcionario, ID_formacao)
-10. Formacao (ID_formacao, descricao)
+1. Tabela "Clientes":
+   - CLIENTES (IDCliente, Nome, Morada, Telefone, NIF, Despesa, Idade)
 
-Essas relações correspondem às tabelas do banco de dados relacional. Cada relação representa uma tabela, e os atributos são representados pelas colunas dessas tabelas. As chaves primárias (identificadores únicos) são indicadas por prefixos "ID_", seguidos pelo nome da relação correspondente.
+2. Tabela "Fornecedores":
+   - FORNECEDORES (IDFornecedor, Nome, Contacto, Email, Empresa)
 
-As relações "Atendimento", "Fornecimento", "Negociacao", "Armazenamento" e "Exercicio" são tabelas de associação que registram os relacionamentos entre as entidades correspondentes. Elas contêm chaves estrangeiras que se referem aos identificadores únicos das entidades envolvidas na associação.
+3. Tabela "Produtos":
+   - PRODUTO (IDProduto, Nome, Preco, Origem)
+
+4. Tabela "Funcionários":
+   - FUNCIONARIOS (IDFuncionario, Nome, Morada, Telefone, Turno)
+
+5. Tabela "Secção":
+   - SECCAO (IDSeccao, Nome, Produto, Data, Quantidade)
+
+6. Tabela "Formação":
+   - FORMACAO (IDFormacao, Nome, Data, Local)
+
+
 
 ## Normalização do Esquema Relacional
-_(Apresentar o estudo da normalização das relações obtidas na secção anterior. Desnormalizar se necessário.)_
+
+### 1NF
+
+1. Tabela "Clientes":
+   - CLIENTES (IDCliente, Nome, Morada, Telefone, NIF, Despesa, Idade)
+
+2. Tabela "Fornecedores":
+   - FORNECEDORES (IDFornecedor, Nome, Contacto, Email, Empresa)
+
+3. Tabela "Produtos":
+   - PRODUTO (IDProduto, Nome, Preco, Origem)
+
+4. Tabela "Funcionários":
+   - FUNCIONARIOS (IDFuncionario, Nome, Morada, Telefone, Turno)
+
+5. Tabela "Secção":
+   - SECCAO (IDSeccao, Nome)
+
+6. Tabela "ProdutosSecção":
+   - PRODUTOS_SECCAO (IDProduto, IDSeccao, Data, Quantidade)
+
+7. Tabela "Formação":
+   - FORMACAO (IDFormacao, Nome, Data, Local)
+
+### 2NF
+
+1. Tabela "Clientes":
+   - CLIENTES (IDCliente, Nome, Morada, Telefone, NIF, Idade)
+   - DESPESA_CLIENTES (IDCliente, Despesa)
+
+2. Tabela "Fornecedores":
+   - FORNECEDORES (IDFornecedor, Nome, Contacto, Email, Empresa)
+
+3. Tabela "Produtos":
+   - PRODUTO (IDProduto, Nome, Preco, Origem)
+
+4. Tabela "Funcionários":
+   - FUNCIONARIOS (IDFuncionario, Nome, Morada, Telefone, Turno)
+
+5. Tabela "Secção":
+   - SECCAO (IDSeccao, Nome)
+
+6. Tabela "ProdutosSecção":
+   - PRODUTOS_SECCAO (IDProduto, IDSeccao)
+   - ESTOQUE (IDProduto, IDSeccao, Data, Quantidade)
+
+7. Tabela "Formação":
+   - FORMACAO (IDFormacao, Nome, Data, Local)
+
+### 3NF
+
+1. Tabela "Clientes":
+   - CLIENTES (IDCliente, Nome, Morada, Telefone, NIF, Idade)
+
+2. Tabela "Despesa":
+   - DESPESA_CLIENTES (IDCliente, Despesa)
+
+3. Tabela "Fornecedores":
+   - FORNECEDORES (IDFornecedor, Nome, Contacto, Email, Empresa)
+
+4. Tabela "Produtos":
+   - PRODUTO (IDProduto, Nome, Preco, Origem)
+
+5. Tabela "Funcionários":
+   - FUNCIONARIOS (IDFuncionario, Nome, Morada, Telefone, Turno)
+
+6. Tabela "Secção":
+   - SECCAO (IDSeccao, Nome)
+
+7. Tabela "ProdutosSecção":
+   - PRODUTOS_SECCAO (IDProduto, IDSeccao)
+
+8. Tabela "Estoque":
+   - ESTOQUE (IDProduto, IDSeccao, Data, Quantidade)
+
+9. Tabela "Formação":
+   - FORMACAO (IDFormacao, Nome, Data, Local)
+
+### BCNF
+
+1. Tabela "Clientes":
+   - CLIENTES (IDCliente, Nome, Morada, Telefone, NIF, Idade)
+
+2. Tabela "Despesa":
+   - DESPESA_CLIENTES (IDCliente, Despesa)
+
+3. Tabela "Fornecedores":
+   - FORNECEDORES (IDFornecedor, Nome, Contacto, Email, Empresa)
+
+4. Tabela "Produtos":
+   - PRODUTO (IDProduto, Nome, Preco, Origem)
+
+5. Tabela "Funcionários":
+   - FUNCIONARIOS (IDFuncionario, Nome, Morada, Telefone, Turno)
+
+6. Tabela "Secção":
+   - SECCAO (IDSeccao, Nome)
+
+7. Tabela "ProdutosSecção":
+   - PRODUTOS_SECCAO (IDProduto, IDSeccao)
+
+8. Tabela "Estoque":
+   - ESTOQUE (IDProduto, IDSeccao, Data, Quantidade)
+
+9. Tabela "Formação":
+   - FORMACAO (IDFormacao, Nome, Data, Local)
+
+
 
 ---
-[< Previous](rebd02.md) | [^ Main](https://github.com/TCM22-SIBD-G03/TCM22-SIBD-G03) | [Next >](rebd04.md)
-:--- | :---: | ---: 
+| [< Previous](rebd02.md) | [^ Main](https://github.com/TCM22-SIBD-G03/TCM22-SIBD-G03) | [Next >](rebd04.md) |
+| :---------------------- | :--------------------------------------------------------: | ------------------: |
