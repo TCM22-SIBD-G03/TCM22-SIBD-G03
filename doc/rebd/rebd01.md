@@ -97,63 +97,43 @@ Com este modelo de dados, podemos informatizar o sistema de informação da merc
 
 
 ## Descrição dos requisitos do utilizador
+   
+Aqui estão os tipos de utilizadores (atores) do sistema de informação da mercearia, com as funcionalidades (casos de uso) a que cada um deles terá acesso:
 
-Descrição dos requisitos do utilizador:
+1. Administrador:
+   - Funcionalidades:
+     - Gerir cadastro de clientes: o administrador pode adicionar, editar e remover informações dos clientes.
+     - Gerir cadastro de fornecedores: o administrador pode adicionar, editar e remover informações dos fornecedores.
+     - Gerir cadastro de produtos: o administrador pode adicionar, editar e remover informações dos produtos.
+     - Gerir cadastro de funcionários: o administrador pode adicionar, editar e remover informações dos funcionários.
+     - Gerir vendas: o administrador pode registrar vendas realizadas na mercearia.
+     - Gerir estoques: o administrador pode controlar o estoque dos produtos, atualizando as quantidades disponíveis.
+     - Gerir pagamentos: o administrador pode registrar os pagamentos dos clientes e gerir as formas de pagamento aceitas.
+     - Gerir fornecimentos: o administrador pode registar as compras feitas aos fornecedores e controlar os fornecimentos de produtos.
 
-O sistema de informação da mercearia deve ser capaz de satisfazer as seguintes necessidades dos utilizadores:
+2. Caixa:
+   - Funcionalidades:
+     - Registrar vendas: o caixa pode realizar o registro de vendas, adicionando os produtos adquiridos pelos clientes.
+     - Gerir pagamentos: o caixa pode receber os pagamentos dos clientes e atualizar o estado de pagamento das vendas.
+     - Consultar estoque: o caixa pode consultar o estoque para verificar a disponibilidade dos produtos.
 
-1. Gestão de Clientes:
-   - Cadastrar novos clientes com informações como nome, morada, número de telefone, idade e forma de pagamento.
-   - Atribuir um número de identificação único a cada cliente.
-   - Armazenar o histórico de compras dos clientes para fins de marketing.
-   - Permitir a consulta e atualização dos dados dos clientes.
+3. Repositor:
+   - Funcionalidades:
+     - Gerir estoques: o repositor pode atualizar as quantidades dos produtos em estoque, registando as entradas e saídas.
+     - Consultar estoque: o repositor pode consultar o estoque para verificar a disponibilidade dos produtos.
+     - Receber fornecimentos: o repositor pode receber os fornecimentos de produtos dos fornecedores e atualizar o estoque.
 
-2. Gestão de Fornecedores:
-   - Registrar fornecedores com informações como nome, contacto específico, loja/armazém específico e endereço eletrónico.
-   - Atribuir um número de identificação único a cada fornecedor.
-   - Permitir a consulta e atualização dos dados dos fornecedores.
+4. Atendente:
+   - Funcionalidades:
+     - Consultar cadastro de clientes: o atendente pode consultar as informações dos clientes.
+     - Registrar atendimentos: o atendente pode registrar os atendimentos prestados aos clientes, associando-os aos funcionários correspondentes.
 
-3. Gestão de Funcionários:
-   - Adicionar funcionários com informações como nome, morada, número de telefone e área de trabalho (Caixa, Repositor, Atendente).
-   - Atribuir um número de identificação único a cada funcionário.
-   - Registrar a formação ou experiência de cada funcionário, quando aplicável.
-   - Permitir a consulta e atualização dos dados dos funcionários.
-
-4. Gestão de Produtos:
-   - Cadastrar produtos com informações como nome, preço, origem e código de barras (identificador único).
-   - Manter um catálogo atualizado de todos os produtos disponíveis na mercearia.
-   - Permitir a consulta, atualização e adição de novos produtos.
-
-5. Transações Financeiras:
-   - Registrar as transações financeiras relacionadas às compras dos clientes e pagamentos aos fornecedores.
-   - Armazenar informações sobre os pagamentos realizados pelos clientes e os valores a receber.
-   - Gerar relatórios de vendas e pagamentos.
-
-6. Interface de Utilizador:
-   - Fornecer uma interface intuitiva e fácil de usar para todos os utilizadores.
-   - Permitir a pesquisa rápida de clientes, fornecedores, funcionários e produtos.
-   - Possibilitar a geração de relatórios com base nos dados armazenados.
-
-7. Segurança e Privacidade:
-   - Garantir a segurança dos dados dos clientes, fornecedores e funcionários.
-   - Implementar medidas de proteção para evitar acesso não autorizado ao sistema.
-   - Cumprir com as regulamentações de privacidade de dados aplicáveis.
-
-8. Escalabilidade e Desempenho:
-   - O sistema deve ser capaz de lidar com um grande número de clientes, fornecedores, funcionários e produtos.
-   - Garantir um desempenho eficiente mesmo com um volume alto de transações e consultas simultâneas.
-
-9. Integração com Sistemas Externos:
-   - Permitir a integração com sistemas externos, como sistemas de pagamento eletrónico e contabilidade.
-
-10. Backup e Recuperação de Dados:
-    - Realizar backups regulares dos dados do sistema e garantir a possibilidade de recuperação em caso de falhas ou perdas de dados.
-
-11. Personalização:
-    - Permitir personalização do sistema de acordo com as necessidades e preferências da mercearia.
-
-Esses requisitos visam fornecer uma descrição básica das funcionalidades e características esperadas para o sistema de informação da mercearia, mas é importante destacar que podem haver outros requisitos específicos que devem ser levados em consideração durante a fase de desenvolvimento e implementação do sistema.
-
+5. Gerente:
+   - Funcionalidades:
+     - Gerir vendas: o gerente pode consultar as vendas realizadas, gerando relatórios e análises.
+     - Gerir estoques: o gerente pode consultar o estado do estoque, analisar os níveis de produtos e identificar necessidades de reposição.
+     - Gerir funcionários: o gerente pode adicionar, editar e remover informações dos funcionários, além de gerir formações e experiências.
+     - Gerir relatórios: o gerente pode gerar relatórios com informações relevantes para a tomada de decisões.
 
 ---
 [< Previous](rebd00.md) | [^ Main](https://github.com/TCM22-SIBD-G03/TCM22-SIBD-G03) | [Next >](rebd02.md)
