@@ -6,6 +6,37 @@ _(Apresentar o SQL para criação do esquema definido acima num SGBD MySQL.)_
 
 
 ```sql
+-- Criação da tabela Clientes
+CREATE TABLE Clientes (
+  idcliente INT PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(50) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  telefone VARCHAR(20) NOT NULL,
+  morada VARCHAR(100) NOT NULL,
+  idade INT NOT NULL,
+  NIF VARCHAR(20) NOT NULL,
+  despesa DECIMAL(10, 2) NOT NULL
+);
+
+-- Criação da tabela Despesa
+CREATE TABLE Despesa (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    idcliente INT NOT NULL,
+    valor DECIMAL (10,2) NOT NULL,
+    data DATE NOT NULL,
+    descricao VARCHAR (100) NOT NULL,
+    FOREIGN KEY (idcliente) REFERENCES clientes(idcliente)
+);
+
+--Criação da Tabela Fornecedores
+CREATE TABLE fornecedores (
+id INT PRIMARY KEY,
+nome VARCHAR(50) NOT NULL,
+telefone VARCHAR(20) NOT NULL,
+email VARCHAR(100) NOT NULL, 
+empresa VARCHAR(50)
+);
+
 -- Criação da tabela Funcionários
 CREATE TABLE Funcionários (
   id BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -15,6 +46,15 @@ CREATE TABLE Funcionários (
   salario DECIMAL(10,2) NOT NULL,
   departamento_id BIGINT,
   FOREIGN KEY (departamento_id) REFERENCES Departamentos(id)
+);
+
+-- Criação da tabela Produtos
+CREATE TABLE produtos (
+id INT PRIMARY KEY,
+nome VARCHAR(50) NOT NULL,
+preco DECIMAL(10,2) NOT NULL,
+estoque INT NOT NULL,
+descricao TEXT
 );
 
 -- Criação da tabela Secção
