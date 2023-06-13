@@ -121,7 +121,7 @@ A tabela "Fornecedores" armazena informações sobre os fornecedores de produtos
 | :------ | :-------------------------- | :---------- | :---------- | :--------- | :--- |
 | id      | Identificador do Fornecedor | BIGINT      | -           | Sim        | Não  |
 | nome    | Nome do Fornecedor          | VARCHAR(50) | -           | Não        | Não  |
-| contato | Contato do Fornecedor       | VARCHAR(50) | -           | Não        | Sim  |
+| telefone | telefone do Fornecedor       | VARCHAR(50) | -           | Não        | Sim  |
 | email   | Email do Fornecedor         | VARCHAR(50) | -           | Não        | Sim  |
 | empresa | Nome da Empresa             | VARCHAR(50) | -           | Não        | Sim  |
 
