@@ -3,7 +3,7 @@
 
 ## Descrição do trabalho
 
-O trabalho consiste na especificação e desenvolvimento de um sistema para a organização da nossa mercearia que é constituída pelas entidades (Cliente, Fornecedores, Funcionários, Produtos) que são:
+O trabalho consiste na especificação e desenvolvimento de um sistema para a organização da nossa mercearia que é constituída pelas entidades (Cliente, Fornecedores, Funcionários, Produtos, Secções e Formações) que são:
 
 O Cliente tem uma forma de identificação, como vários clientes não podem ter o mesmo número de identificação, o Cartão de identificação vem com o número de cliente, morada e o número de telefone e a suposta foto do cliente, idade. Temos também o histórico de compras dos clientes para fins de *marketing*.
 
@@ -13,13 +13,14 @@ Temos vários fornecedores, como:
 - Fornecedor de Carne e Peixe é a empresa Sabor do Mar que é responsável pela venda e transporte dessas possíveis mercadorias mensais que tem um contacto específico, loja específica e o endereço eletrónico;
 - Fornecedor de Produtos Lácteos e Queijos que é a empresa Leite Saudável que é responsável pela venda e transporte dessas possíveis mercadorias mensais que tem um contacto específico, loja específica e o endereço eletrónico;
 
-Relativamente aos funcionários, eles têm uma respetiva área de trabalho, nome, morada, número, telefone e o seu horário de trabalho.
+Relativamente aos funcionários, eles têm uma respetiva secção de trabalho, nome, morada, número de telefone e o seu turno.
 
-Respetiva área de trabalho dos funcionários:
+Respetiva secçãp de trabalho dos funcionários:
 
-- Caixa (nome, morada, número, telefone);
-- Repositor (nome, morada, número telefone);
-- Atendente (nome, morada, número, telefone);
+- Id;
+- Tipo de Produtos;
+- Data;
+- Quantidade;
 
 Temos 20 clientes que são:
 
@@ -62,7 +63,7 @@ Entidade Cliente:
 - Morada
 - Número de telefone
 - Idade
-- Forma de pagamento
+- Despesa
 - NIF
 
 
@@ -80,8 +81,7 @@ Entidade Funcionário:
 - Nome
 - Morada
 - Número de telefone
-- Área de trabalho (Caixa, Repositor, Atendente)
-- Formação/Experiência (se aplicável)
+- Turno
 
 
 Entidade Produto:
@@ -91,7 +91,18 @@ Entidade Produto:
 - Origem
 - *Código de Barras* (identificador único)
 
+Entidade Formação:
 
+- *ID* (identificador único)
+- Data
+- Especialidade
+
+Entidade Secção:
+
+- *ID* (identificador único)
+- Produto
+- Data
+- Quantidade
 
 Com este modelo de dados, podemos informatizar o sistema de informação da mercearia e gerir facilmente as informações dos clientes, fornecedores e funcionários, bem como as transações financeiras e compras de mercadorias.
 
