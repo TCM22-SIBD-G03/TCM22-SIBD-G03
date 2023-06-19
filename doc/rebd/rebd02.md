@@ -9,7 +9,6 @@
 1. Cliente:
    - Um cliente deve ter um número de identificação único.
    - O número de telefone de um cliente deve ser válido e único.
-   - O cliente só pode ter uma forma de pagamento definida.
    - O nome do cliente não pode ser vazio.
 
 2. Fornecedor:
@@ -36,8 +35,8 @@
 
 Regras de associação adicionais:
 
-1. Atende:
-   - Um cliente pode ser atendido por vários funcionários.
+1. Compra:
+   - Um cliente pode comprar vários produtos.
    - Um funcionário pode atender vários clientes.
    - A associação "atende" representa o atendimento de um cliente por um funcionário.
 
@@ -46,20 +45,20 @@ Regras de associação adicionais:
    - Um produto pode ser fornecido por vários fornecedores.
    - A associação "fornece" representa o fornecimento de produtos por um fornecedor.
 
-3. Negoceia:
-   - Um funcionário pode negociar com vários fornecedores.
-   - Um fornecedor pode ser negociado por vários funcionários.
-   - A associação "negoceia" representa a negociação entre um funcionário e um fornecedor.
-
-4. Armazena:
+3. Armazena:
    - Um funcionário pode ser responsável por armazenar vários produtos.
    - Um produto pode ser armazenado por vários funcionários.
    - A associação "armazena" representa a responsabilidade de um funcionário em armazenar produtos.
-
+  
+4. Trabalha:
+   - Um funcionário pode trabalhar em apenas uma secção.
+   - Uma secção pode ter vários funcionários a trabalhar lá.
+   - A associação "trabalha" representa a responsabilidade de um funcionário em relação à secção onde trabalha.
+  
 5. Exerce:
-   - Um funcionário pode exercer várias formações.
-   - Uma formação pode ser exercida por vários funcionários.
-   - A associação "exerce" representa a formação exercida por um funcionário.
+   - Um funcionário pode exercer apenas uma formação.
+   - Uma formação pode ser dada a vários funcionários.
+   - A associação "exerce" representa a formação que um funcionário têm.
 
 Essas regras de negócio adicionais e restrições ajudam a garantir a integridade e consistência dos dados no sistema de informação da mercearia, além de definir os relacionamentos e limitações entre as entidades e associações. É importante considerar essas regras ao projetar e desenvolver o sistema.
 
