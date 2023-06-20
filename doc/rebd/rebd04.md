@@ -251,40 +251,6 @@ A tabela "Secção" armazena informações sobre as seções ou departamentos da
 | ------------- | --------- | ------------------- | ------------------------- | ------- |
 | secao_tipo_fk | tipo      | Tabela_c            | id                        | Não     |
 
-### Tabela ProdutosSecção
-
-#### DESCRIÇÃO 
-
-A tabela "ProdutosSecção" armazena a relação entre os produtos e as seções da empresa.
-
-#### COLUNAS 
-
-| Nome       | Descrição                                      | Domínio | por Omissão | Automático | Nulo |
-| :--------- | :--------------------------------------------- | :------ | :---------- | :--------- | :--- |
-| id         | Identificador da relação entre produto e seção | BIGINT  | -           | Sim        | Não  |
-| produto_id | ID do produto                                  | BIGINT  | -           | Não        | Não  |
-| secao_id   | ID da seção                                    | BIGINT  | -           | Não        | Não  |
-
-#### RESTRIÇÕES DE INTEGRIDADE
-
-- **Chave Primária**: 
-
-| Coluna(s) |
-| --------- |
-| id        |
-
-- **Unicidade** (valores únicos)*:
-
-| Nome              | Coluna(s)            | Indexar |
-| ----------------- | -------------------- | ------- |
-| produtossecao_uk1 | produto_id, secao_id | Sim     |
-
-- **Referêncial** (chaves estrangeiras)*:
-
-| Nome              | Coluna(s)  | Tabela referênciada | Coluna(s) referênciada(s) | Indexar |
-| ----------------- | ---------- | ------------------- | ------------------------- | ------- |
-| produtossecao_fk1 | produto_id | Produtos            | id                        | Não     |
-| produtossecao_fk2 | secao_id   | Secção              | id                        | Não     |
 
 ### Tabela Estoque
 
