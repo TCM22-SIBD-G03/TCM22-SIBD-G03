@@ -13,7 +13,7 @@ date:
 - 2023/06/20
 colorlinks:
 - linkcolor
-institute: "ISMAI"
+institute: "UMAIA"
 theme:
 - arguelles
 aspectratio: 169
@@ -26,7 +26,7 @@ fontsize: 5
 
 O trabalho consiste na especificação e desenvolvimento de um sistema para a organização da nossa mercearia que é constituída pelas entidades (Cliente, Fornecedores, Funcionários, Produtos) que são:
 
-O Cliente tem uma forma de identificação, como vários clientes não podem ter o mesmo número de identificação, o Cartão de identificação vem com o número de cliente, morada e o número de telefone e a suposta foto do cliente, idade. Temos também o histórico de compras dos clientes para fins de marketing.
+O Cliente tem uma forma de identificação, como vários clientes não podem ter o mesmo número de identificação, o Cartão de identificação vem com o número de cliente, morada e o número de telefone e a suposta foto do cliente, idade. Temos também o histórico de compras dos clientes para fins de *marketing*.
 
 # Descrição do Trabalho
 
@@ -105,15 +105,16 @@ Entidade Cliente:
 - Forma de pagamento
 - NIF
 
+
 # Descrição do Trabalho
 
 Entidade Fornecedor:
 
 - *ID* (identificador único)
 - Nome
-- Contacto específico
-- Loja/ Armazém específico
-- Endereço eletrónico
+- Telefone
+- Empresa
+- Email
 
 # Descrição do Trabalho
 
@@ -135,13 +136,35 @@ Entidade Produto:
 - Origem
 - *Código de Barras* (identificador único)
 
+# Descrição do Trabalho
+
+Entidade Despesa:
+
+- *ID* (identificador único)
+- ID Cliente
+- Valor
+- Data
+- Descrição
+
+# Descrição do Trabalho
+
+Entidade Secção
+
+- ID
+- Nome
+- Descrição
+
 # Modelação de Problemas
 
 Um dos problemas que é possível ocorrer durante o processo de criação são
 
 1. Problemas com fornecedores: O sistema precisa ter uma tabela de fornecedores, que contém informações como nome, endereço e informações de contacto. No entanto, se um fornecedor for excluído do sistema, todos os produtos associados a esse fornecedor também serão excluídos. Isso pode levar a problemas se um fornecedor fornecer produtos exclusivos que não são fornecidos por outros fornecedores. Além disso, se houver um problema com um produto fornecido por um fornecedor, isso pode afetar todos os clientes que compraram esse produto.
 2. Número de identificação do cliente: Cada cliente deve ter um número de identificação exclusivo. No entanto, pode haver casos em que o sistema atribua o mesmo número de identificação a dois clientes diferentes. Isso pode levar a problemas se os registos dos clientes forem misturados ou se a identificação do cliente for usada para acessar informações pessoais.
+
+# Modelação de Problemas
+
 3. Horários de Turnos dos Funcionários: Cada funcionário tem um horário de trabalho específico, mas às vezes pode haver sobreposições de turno, o que pode levar a confusões e atrasos. Com um sistema adequado de agendamento de turnos, a empresa poderá evitar conflitos de horário e garantir que cada funcionário trabalhe nos horários mais adequados para eles. Isso aumentará a eficiência da empresa e ajudará a garantir que cada funcionário tenha um ambiente de trabalho seguro e confortável.
+4. Cada Funcionário pode trabalhar uma secção.
 
 # C2 : Especificação de Requisitos
 
@@ -152,7 +175,7 @@ A nossa Mercearia vai utilizar a base de dados para o número de funcionário qu
 
 ## Modelo E/A
 
-![Modelo E/A](image01.png)   
+![Modelo E/A](image01.png)
 
 
 # Entidades
@@ -162,6 +185,7 @@ A nossa Mercearia vai utilizar a base de dados para o número de funcionário qu
 3. Produto
 4. Funcionário
 5. Formação
+6. Secção
 
 # Associações
 
@@ -170,7 +194,7 @@ A nossa Mercearia vai utilizar a base de dados para o número de funcionário qu
 3. negoceia
 4. armazena
 5. exerce
-
+6. trabalho
 
 # Regras de negócio adicionais (Restrições)
 
@@ -180,6 +204,7 @@ A nossa Mercearia vai utilizar a base de dados para o número de funcionário qu
 - O número de telefone de um cliente deve ser válido e único.
 - O cliente só pode ter uma forma de pagamento definida.
 - O nome do cliente não pode ser vazio.
+
 
 ## 2. Fornecedor:
 
@@ -207,34 +232,48 @@ A nossa Mercearia vai utilizar a base de dados para o número de funcionário qu
 - A formação de um funcionário deve estar associada a um funcionário existente.
 - A experiência de um funcionário deve estar associada a um funcionário existente.
 
+# 6. Secção
+
+- Cada Funcionário deve Trabalha em uma seccao.
+
 # Regras de associação adicionais:
 
 ## 1. Atende:
+
 - Um cliente pode ser atendido por vários funcionários.
 - Um funcionário pode atender vários clientes.
 - A associação "atende" representa o atendimento de um cliente por um funcionário.
 
 ## 2. Fornece:
+
 - Um fornecedor pode fornecer vários produtos.
 - Um produto pode ser fornecido por vários fornecedores.
 - A associação "fornece" representa o fornecimento de produtos por um fornecedor.
 
 # 3. Negoceia:
+
 - Um funcionário pode negociar com vários fornecedores.
 - Um fornecedor pode ser negociado por vários funcionários.
 - A associação "negoceia" representa a negociação entre um funcionário e um fornecedor.
 
 ## 4. Armazena:
+
 - Um funcionário pode ser responsável por armazenar vários produtos.
 - Um produto pode ser armazenado por vários funcionários.
 - A associação "armazena" representa a responsabilidade de um funcionário em armazenar produtos.
 
 ## 5. Exerce:
+
 - Um funcionário pode exercer várias formações.
 - Uma formação pode ser exercida por vários funcionários.
 - A associação "exerce" representa a formação exercida por um funcionário.
 
-Essas regras de negócio adicionais e restrições ajudam a garantir a integridade e consistência dos dados no sistema de informação da mercearia, além de definir os relacionamentos e 
+# 6. Trabalha:
+
+- Um funcionário pode trabalhar em uma seccão.
+- A associação "trabalha" representa a seccao onde cada trabalhador trabalha.  
+
+Essas regras de negócio adicionais e restrições ajudam a garantir a integridade e consistência dos dados no sistema de informação da mercearia, além de definir os relacionamentos e
 limitações entre as entidades e associações. É importante considerar essas regras ao projetar e desenvolver o sistema.
 
 # C3 : Normalização
@@ -278,12 +317,8 @@ limitações entre as entidades e associações. É importante considerar essas 
 5. Tabela "Secção":
    - SECCAO (IDSeccao, Nome)
 
-6. Tabela "ProdutosSecção":
-   - PRODUTOS_SECCAO (IDProduto, IDSeccao, Data, Quantidade)
-
-7. Tabela "Formação":
+6. Tabela "Formação":
    - FORMACAO (IDFormacao, Nome, Data, Local)
-
 
 # 2NF
 
@@ -303,11 +338,7 @@ limitações entre as entidades e associações. É importante considerar essas 
 5. Tabela "Secção":
    - SECCAO (IDSeccao, Nome)
 
-6. Tabela "ProdutosSecção":
-   - PRODUTOS_SECCAO (IDProduto, IDSeccao)
-   - ESTOQUE (IDProduto, IDSeccao, Data, Quantidade)
-
-7. Tabela "Formação":
+6. Tabela "Formação":
    - FORMACAO (IDFormacao, Nome, Data, Local)
 
 # 3NF
@@ -327,20 +358,14 @@ limitações entre as entidades e associações. É importante considerar essas 
 5. Tabela "Funcionários":
    - FUNCIONARIOS (IDFuncionario, Nome, Morada, Telefone, Turno)
 
-# 3NF
-
 6. Tabela "Secção":
    - SECCAO (IDSeccao, Nome)
 
-7. Tabela "ProdutosSecção":
-   - PRODUTOS_SECCAO (IDProduto, IDSeccao)
-
-8. Tabela "Estoque":
+7. Tabela "Estoque":
    - ESTOQUE (IDProduto, IDSeccao, Data, Quantidade)
 
-9. Tabela "Formação":
+8. Tabela "Formação":
    - FORMACAO (IDFormacao, Nome, Data, Local)
-
 
 # BCNF
 
@@ -359,22 +384,17 @@ limitações entre as entidades e associações. É importante considerar essas 
 5. Tabela "Funcionários":
    - FUNCIONARIOS (IDFuncionario, Nome, Morada, Telefone, Turno)
 
-# BCNF
-
 6. Tabela "Secção":
    - SECCAO (IDSeccao, Nome)
 
-7. Tabela "ProdutosSecção":
-   - PRODUTOS_SECCAO (IDProduto, IDSeccao)
-
-8. Tabela "Estoque":
+7. Tabela "Estoque":
    - ESTOQUE (IDProduto, IDSeccao, Data, Quantidade)
 
-9. Tabela "Formação":
+8. Tabela "Formação":
    - FORMACAO (IDFormacao, Nome, Data, Local)
 
 
-# Esquema Relacional 
+# Esquema Relacional
 
 # Relações
 
@@ -382,7 +402,7 @@ limitações entre as entidades e associações. É importante considerar essas 
 
 > A tabela "Clientes" armazena informações dos clientes cadastrados no sistema, incluindo o seu identificador único (IDCliente), nome, endereço, número de telefone, número de identificação fiscal (NIF), despesa associada e idade. Essa tabela permite o registro e a gestão dos dados dos clientes, fornecendo informações relevantes para a gestão e análise de clientes.
 
-# COLUNAS 
+# COLUNAS
 
 | Nome      | Descrição                      | Domínio       | por Omissão | Automático | Nulo |
 | :-------- | :----------------------------- | :------------ | :---------- | :--------- | :--- |
@@ -396,7 +416,7 @@ limitações entre as entidades e associações. É importante considerar essas 
 
 # RESTRIÇÕES DE INTEGRIDADE
 
-# Chave Primária: 
+# Chave Primária:
 
 ## RESTRIÇÕES DE INTEGRIDADE
 
@@ -416,7 +436,7 @@ limitações entre as entidades e associações. É importante considerar essas 
 
 > A tabela "Despesa" armazena informações sobre as despesas dos clientes registrados no sistema.
 
-# COLUNAS 
+# COLUNAS
 
 | Nome      | Descrição                | Domínio       | por Omissão | Automático | Nulo |
 | :-------- | :----------------------- | :------------ | :---------- | :--------- | :--- |
@@ -428,7 +448,7 @@ limitações entre as entidades e associações. É importante considerar essas 
 
 # RESTRIÇÕES DE INTEGRIDADE
 
-# Chave Primária: 
+# Chave Primária:
 
 ## RESTRIÇÕES DE INTEGRIDADE
 
@@ -456,7 +476,7 @@ limitações entre as entidades e associações. É importante considerar essas 
 
 > A tabela "Fornecedores" armazena informações sobre os fornecedores de produtos.
 
-# COLUNAS 
+# COLUNAS
 
 | Nome     | Descrição                   | Domínio     | por Omissão | Automático | Nulo |
 | :------- | :-------------------------- | :---------- | :---------- | :--------- | :--- |
@@ -496,7 +516,7 @@ limitações entre as entidades e associações. É importante considerar essas 
 
 > A tabela "Produtos" armazena informações sobre os produtos disponíveis.
 
-# COLUNAS 
+# COLUNAS
 
 | Nome      | Descrição                | Domínio       | por Omissão | Automático | Nulo |
 | :-------- | :----------------------- | :------------ | :---------- | :--------- | :--- |
@@ -508,7 +528,7 @@ limitações entre as entidades e associações. É importante considerar essas 
 
 # RESTRIÇÕES DE INTEGRIDADE
 
-# Chave Primária: 
+# Chave Primária:
 
 ## RESTRIÇÕES DE INTEGRIDADE
 
@@ -536,7 +556,7 @@ limitações entre as entidades e associações. É importante considerar essas 
 
 > A tabela "Funcionários" armazena informações sobre os funcionários da empresa.
 
-# COLUNAS 
+# COLUNAS
 
 | Nome      | Descrição                    | Domínio       | por Omissão | Automático | Nulo |
 | :-------- | :--------------------------- | :------------ | :---------- | :--------- | :--- |
@@ -548,7 +568,7 @@ limitações entre as entidades e associações. É importante considerar essas 
 
 # RESTRIÇÕES DE INTEGRIDADE
 
-# Chave Primária: 
+# Chave Primária:
 
 ## RESTRIÇÕES DE INTEGRIDADE
 
@@ -576,7 +596,7 @@ limitações entre as entidades e associações. É importante considerar essas 
 
 > A tabela "Secção" armazena informações sobre as seções ou departamentos da empresa.
 
-# COLUNAS 
+# COLUNAS
 
 | Nome      | Descrição              | Domínio     | por Omissão | Automático | Nulo |
 | :-------- | :--------------------- | :---------- | :---------- | :--------- | :--- |
@@ -586,7 +606,7 @@ limitações entre as entidades e associações. É importante considerar essas 
 
 # RESTRIÇÕES DE INTEGRIDADE
 
-# Chave Primária: 
+# Chave Primária:
 
 ## RESTRIÇÕES DE INTEGRIDADE
 
@@ -610,50 +630,13 @@ limitações entre as entidades e associações. É importante considerar essas 
 | ------------- | --------- | ------------------- | ------------------------- | ------- |
 | secao_tipo_fk | tipo      | Tabela_c            | id                        | Não     |
 
-# Tabela ProdutosSecção
 
-> A tabela "ProdutosSecção" armazena a relação entre os produtos e as seções da empresa.
-
-# COLUNAS 
-
-| Nome       | Descrição                                      | Domínio | por Omissão | Automático | Nulo |
-| :--------- | :--------------------------------------------- | :------ | :---------- | :--------- | :--- |
-| id         | Identificador da relação entre produto e seção | BIGINT  | -           | Sim        | Não  |
-| produto_id | ID do produto                                  | BIGINT  | -           | Não        | Não  |
-| secao_id   | ID da seção                                    | BIGINT  | -           | Não        | Não  |
-
-# RESTRIÇÕES DE INTEGRIDADE
-
-# Chave Primária: 
-
-## RESTRIÇÕES DE INTEGRIDADE
-
-| Coluna(s) |
-| --------- |
-| id        |
-
-# Unicidade (valores únicos):
-
-## RESTRIÇÕES DE INTEGRIDADE
-
-| Nome              | Coluna(s)            | Indexar |
-| ----------------- | -------------------- | ------- |
-| produtossecao_uk1 | produto_id, secao_id | Sim     |
-
-# Referêncial (chaves estrangeiras):
-
-## RESTRIÇÕES DE INTEGRIDADE
-
-| Nome              | Coluna(s)  | Tabela referênciada | Coluna(s) referênciada(s) | Indexar |
-| ----------------- | ---------- | ------------------- | ------------------------- | ------- |
-| produtossecao_fk1 | produto_id | Produtos            | id                        | Não     |
-| produtossecao_fk2 | secao_id   | Secção              | id                        | Não     |
 
 # Tabela Estoque
 
 > A tabela "Estoque" armazena informações sobre o estoque de produtos da empresa.
 
-# COLUNAS 
+# COLUNAS
 
 | Nome       | Descrição                      | Domínio | por Omissão | Automático | Nulo |
 | :--------- | :----------------------------- | :------ | :---------- | :--------- | :--- |
@@ -665,7 +648,7 @@ limitações entre as entidades e associações. É importante considerar essas 
 
 # RESTRIÇÕES DE INTEGRIDADE
 
-# Chave Primária: 
+# Chave Primária:
 
 ## RESTRIÇÕES DE INTEGRIDADE
 
@@ -693,7 +676,7 @@ limitações entre as entidades e associações. É importante considerar essas 
 
 > A tabela "Formação" armazena informações sobre as formações realizadas pela empresa.
 
-# COLUNAS 
+# COLUNAS
 
 | Nome      | Descrição                      | Domínio     | por Omissão | Automático | Nulo |
 | :-------- | :----------------------------- | :---------- | :---------- | :--------- | :--- |
@@ -706,7 +689,7 @@ limitações entre as entidades e associações. É importante considerar essas 
 
 # RESTRIÇÕES DE INTEGRIDADE
 
-# Chave Primária: 
+# Chave Primária:
 
 ## RESTRIÇÕES DE INTEGRIDADE
 
@@ -749,6 +732,7 @@ CREATE TABLE Clientes (
   despesa DECIMAL(10, 2) NOT NULL
 );
 ```
+
 # Criação da tabela Despesa
 
 ```sql
@@ -761,6 +745,7 @@ CREATE TABLE Despesa (
     descricao VARCHAR (100) NOT NULL,
     FOREIGN KEY (idcliente) REFERENCES clientes(idcliente)
 );
+
 ```
 # Criação da Tabela Fornecedores
 
@@ -773,6 +758,7 @@ telefone VARCHAR(20) NOT NULL,
 email VARCHAR(100) NOT NULL, 
 empresa VARCHAR(50)
 );
+
 ```
 
 # Criação da tabela Funcionários
@@ -788,6 +774,7 @@ CREATE TABLE Funcionários (
   departamento_id BIGINT,
   FOREIGN KEY (departamento_id) REFERENCES Departamentos(id)
 );
+
 ```
 # Criação da tabela Produtos
 
@@ -812,6 +799,7 @@ CREATE TABLE Secção (
   gerente_id BIGINT,
   FOREIGN KEY (gerente_id) REFERENCES Funcionários(id)
 );
+
 ```
 
 # Criação da tabela ProdutosSecção
@@ -825,6 +813,7 @@ CREATE TABLE ProdutosSecção (
   FOREIGN KEY (produto_id) REFERENCES Produtos(id),
   FOREIGN KEY (secção_id) REFERENCES Secção(id)
 );
+
 ```
 
 # Criação da tabela Estoque
