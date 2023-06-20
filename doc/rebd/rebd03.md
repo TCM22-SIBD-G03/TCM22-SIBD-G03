@@ -41,10 +41,7 @@
 5. Tabela "Secção":
    - SECCAO (IDSeccao, Nome)
 
-6. Tabela "ProdutosSecção":
-   - PRODUTOS_SECCAO (IDProduto, IDSeccao, Data, Quantidade)
-
-7. Tabela "Formação":
+6. Tabela "Formação":
    - FORMACAO (IDFormacao, Nome, Data, Local)
 
 ### 2NF
@@ -65,11 +62,7 @@
 5. Tabela "Secção":
    - SECCAO (IDSeccao, Nome)
 
-6. Tabela "ProdutosSecção":
-   - PRODUTOS_SECCAO (IDProduto, IDSeccao)
-   - ESTOQUE (IDProduto, IDSeccao, Data, Quantidade)
-
-7. Tabela "Formação":
+6. Tabela "Formação":
    - FORMACAO (IDFormacao, Nome, Data, Local)
 
 ### 3NF
@@ -92,13 +85,10 @@
 6. Tabela "Secção":
    - SECCAO (IDSeccao, Nome)
 
-7. Tabela "ProdutosSecção":
-   - PRODUTOS_SECCAO (IDProduto, IDSeccao)
-
-8. Tabela "Estoque":
+7. Tabela "Estoque":
    - ESTOQUE (IDProduto, IDSeccao, Data, Quantidade)
 
-9. Tabela "Formação":
+8. Tabela "Formação":
    - FORMACAO (IDFormacao, Nome, Data, Local)
 
 ### BCNF
@@ -121,13 +111,10 @@
 6. Tabela "Secção":
    - SECCAO (IDSeccao, Nome)
 
-7. Tabela "ProdutosSecção":
-   - PRODUTOS_SECCAO (IDProduto, IDSeccao)
-
-8. Tabela "Estoque":
+7. Tabela "Estoque":
    - ESTOQUE (IDProduto, IDSeccao, Data, Quantidade)
 
-9. Tabela "Formação":
+8. Tabela "Formação":
    - FORMACAO (IDFormacao, Nome, Data, Local)
 
 
