@@ -1,10 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `g03` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE  IF NOT EXISTS `g03` /*!40100 DEFAULT CHARACTER SET latin1 */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `g03`;
--- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
---
--- Host: localhost    Database: g03
--- ------------------------------------------------------
--- Server version	5.7.36
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -17,29 +12,21 @@ USE `g03`;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
--- Table structure for table `clientes`
---
-
 DROP TABLE IF EXISTS `clientes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `clientes` (
-  `idcliente` int(11) NOT NULL AUTO_INCREMENT,
+  `idcliente` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `telefone` varchar(20) NOT NULL,
   `morada` varchar(100) NOT NULL,
-  `idade` int(11) NOT NULL,
+  `idade` int NOT NULL,
   `NIF` varchar(20) NOT NULL,
   `despesa` decimal(10,2) NOT NULL,
   PRIMARY KEY (`idcliente`)
 ) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `clientes`
---
 
 LOCK TABLES `clientes` WRITE;
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
@@ -47,16 +34,12 @@ INSERT INTO `clientes` VALUES (1,'João Silva','joao.silva@example.com','1234567
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `despesa`
---
-
 DROP TABLE IF EXISTS `despesa`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `despesa` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `idcliente` int(11) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `idcliente` int NOT NULL,
   `valor` decimal(10,2) NOT NULL,
   `data` date NOT NULL,
   `descricao` varchar(100) NOT NULL,
@@ -65,35 +48,23 @@ CREATE TABLE `despesa` (
 ) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `despesa`
---
-
 LOCK TABLES `despesa` WRITE;
 /*!40000 ALTER TABLE `despesa` DISABLE KEYS */;
 INSERT INTO `despesa` VALUES (1,1,15.99,'2023-05-01','Compra de frutas frescas'),(2,2,10.50,'2023-05-02','Aquisição de legumes para salada'),(3,3,25.75,'2023-05-03','Compra de carne para churrasco'),(4,4,8.99,'2023-05-04','Aquisição de peixe fresco'),(5,5,12.49,'2023-05-05','Compra de produtos lácteos'),(6,6,7.50,'2023-05-06','Aquisição de itens de limpeza'),(7,7,18.20,'2023-05-07','Compra de cereais e grãos'),(8,8,6.99,'2023-05-08','Aquisição de produtos de higiene pessoal'),(9,9,14.30,'2023-05-09','Compra de pão fresco'),(10,10,9.75,'2023-05-10','Aquisição de bebidas não alcoólicas'),(11,11,23.50,'2023-05-11','Compra de alimentos enlatados'),(12,12,13.80,'2023-05-12','Aquisição de snacks e petiscos'),(13,13,16.99,'2023-05-13','Compra de produtos de limpeza doméstica'),(14,14,11.25,'2023-05-14','Aquisição de produtos de higiene bucal'),(15,15,28.40,'2023-05-15','Compra de produtos congelados'),(16,16,9.99,'2023-05-16','Aquisição de especiarias e temperos'),(17,17,22.75,'2023-05-17','Compra de produtos para cuidados pessoais'),(18,18,7.50,'2023-05-18','Aquisição de produtos de panificação'),(19,19,19.30,'2023-05-19','Compra de alimentos orgânicos'),(20,20,14.75,'2023-05-20','Aquisição de produtos para limpeza de casa'),(21,21,26.50,'2023-05-21','Compra de snacks saudáveis'),(22,22,12.80,'2023-05-22','Aquisição de produtos de cuidados com a pele'),(23,23,17.99,'2023-05-23','Compra de alimentos sem glúten'),(24,24,9.25,'2023-05-24','Aquisição de bebidas alcoólicas'),(25,25,24.75,'2023-05-25','Compra de produtos de limpeza para banheiro'),(26,26,8.99,'2023-05-26','Aquisição de produtos de higiene feminina'),(27,27,21.50,'2023-05-27','Compra de produtos para cuidados com o cabelo'),(28,28,15.75,'2023-05-28','Aquisição de produtos para animais de estimação'),(29,29,18.30,'2023-05-29','Compra de produtos dietéticos'),(30,30,11.99,'2023-05-30','Aquisição de produtos de limpeza multiuso');
 /*!40000 ALTER TABLE `despesa` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `estoque`
---
-
 DROP TABLE IF EXISTS `estoque`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `estoque` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `produto_id` bigint(20) DEFAULT NULL,
-  `quantidade` int(11) NOT NULL,
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `produto_id` bigint DEFAULT NULL,
+  `quantidade` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `produto_id` (`produto_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `estoque`
---
 
 LOCK TABLES `estoque` WRITE;
 /*!40000 ALTER TABLE `estoque` DISABLE KEYS */;
@@ -101,28 +72,20 @@ INSERT INTO `estoque` VALUES (1,1,10),(2,2,20),(3,3,15),(4,4,25),(5,5,18),(6,6,1
 /*!40000 ALTER TABLE `estoque` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `formacao`
---
-
 DROP TABLE IF EXISTS `formacao`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `formacao` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `id` bigint NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) NOT NULL,
-  `descrição` text,
+  `descricao` text,
   `data` date NOT NULL,
-  `duração` int(11) NOT NULL,
+  `duracao` int NOT NULL,
   `instrutor` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `instrutor` (`instrutor`)
 ) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `formacao`
---
 
 LOCK TABLES `formacao` WRITE;
 /*!40000 ALTER TABLE `formacao` DISABLE KEYS */;
@@ -130,15 +93,11 @@ INSERT INTO `formacao` VALUES (1,'Atendimento','Curso de atendimento ao cliente'
 /*!40000 ALTER TABLE `formacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `fornecedores`
---
-
 DROP TABLE IF EXISTS `fornecedores`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `fornecedores` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `nome` varchar(50) NOT NULL,
   `telefone` varchar(20) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -147,38 +106,26 @@ CREATE TABLE `fornecedores` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `fornecedores`
---
-
 LOCK TABLES `fornecedores` WRITE;
 /*!40000 ALTER TABLE `fornecedores` DISABLE KEYS */;
 INSERT INTO `fornecedores` VALUES (1,'Distribuidora Sabor Carne','123456789','contato@saborcarne.com','Sabor Carne Ltda.'),(2,'Peixaria Mar Fresco','987654321','contato@marfresco.com','Mar Fresco Distribuição de Pescados'),(3,'Hortifruti Verduras & Cia','789456123','contato@verdurasecia.com','Verduras & Cia Comércio de Legumes'),(4,'Frutaria Delícia Tropical','654789321','contato@deliciatropical.com','Delícia Tropical Frutas e Hortaliças Ltda.'),(5,'Laticínios Leite Bom','321654987','contato@leitebom.com','Leite Bom Indústria de Laticínios'),(6,'Carnes Nobres','987321654','contato@carnesnobres.com','Carnes Nobres Distribuidora'),(7,'Peixes do Mar','654321987','contato@peixesdomar.com','Peixes do Mar Pescados Ltda.'),(8,'Horta Verde','789123456','contato@hortaverde.com','Horta Verde Comércio de Hortifruti'),(9,'Frutas Deliciosas','321789654','contato@frutasdeliciosas.com','Frutas Deliciosas Ltda.'),(10,'Laticínios Sabor Puro','456987321','contato@saborpuro.com','Sabor Puro Laticínios e Derivados'),(11,'Carnes Gourmet','123321123','contato@carnesgourmet.com','Carnes Gourmet Distribuidora'),(12,'Peixaria Oceano Azul','321123321','contato@oceanoazul.com','Oceano Azul Distribuição de Pescados'),(13,'Hortifruti Orgânico','456456456','contato@hortifrutiorganico.com','Hortifruti Orgânico Ltda.'),(14,'Frutas Frescas','789789789','contato@frutasfrescas.com','Frutas Frescas Comércio de Hortifrutigranjeiros'),(15,'Laticínios Delícia','123123123','contato@laticiniosdelicia.com','Laticínios Delícia Ltda.'),(16,'Carnes Prime','321321321','contato@carnesprime.com','Carnes Prime Distribuidora'),(17,'Peixaria Maré Alta','654654654','contato@marealta.com','Maré Alta Pescados e Frutos do Mar'),(18,'Hortifruti Sabores Naturais','987987987','contato@saboresnaturais.com','Sabores Naturais Hortifruti Ltda.'),(19,'Frutaria Tropical','123654789','contato@frutariatropical.com','Frutaria Tropical Frutas Selecionadas'),(20,'Laticínios Fazenda Feliz','987321456','contato@fazendafeliz.com','Fazenda Feliz Laticínios'),(21,'Carnes Premium','456321654','contato@carnespremium.com','Carnes Premium Distribuidora'),(22,'Peixaria Maré Mansa','789654321','contato@maremansa.com','Maré Mansa Pescados e Frutos do Mar'),(23,'Hortifruti Natureza Viva','321456789','contato@naturezaviva.com','Natureza Viva Hortifruti Ltda.'),(24,'Frutas do Cerrado','654987321','contato@frutasdocerrado.com','Frutas do Cerrado Distribuidora'),(25,'Laticínios Leite Puro','789321654','contato@leitepuro.com','Leite Puro Indústria de Laticínios'),(26,'Carnes Select','123789123','contato@carnesselect.com','Carnes Select Distribuidora'),(27,'Peixaria Oceano Azul','321456123','contato@oceanoazul.com','Oceano Azul Distribuição de Pescados'),(28,'Hortifruti Caminho Verde','654789321','contato@caminhoverde.com','Caminho Verde Hortifruti e Legumes'),(29,'Frutas da Estação','987123456','contato@frutasdaestacao.com','Frutas da Estação Comércio de Hortifrutigranjeiros'),(30,'Laticínios Vaca Feliz','456321987','contato@vacafeliz.com','Vaca Feliz Laticínios Ltda.');
 /*!40000 ALTER TABLE `fornecedores` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `funcionarios`
---
-
 DROP TABLE IF EXISTS `funcionarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `funcionarios` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `id` bigint NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) NOT NULL,
   `cargo` varchar(50) NOT NULL,
   `data_contratacao` date NOT NULL,
   `salario` decimal(10,2) NOT NULL,
-  `departamento_id` bigint(20) DEFAULT NULL,
+  `departamento_id` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `departamento_id` (`departamento_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `funcionarios`
---
 
 LOCK TABLES `funcionarios` WRITE;
 /*!40000 ALTER TABLE `funcionarios` DISABLE KEYS */;
@@ -186,26 +133,18 @@ INSERT INTO `funcionarios` VALUES (1,'João Silva','Gerente','2022-01-10',5000.0
 /*!40000 ALTER TABLE `funcionarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `produtos`
---
-
 DROP TABLE IF EXISTS `produtos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `produtos` (
-  `produto_id` int(11) NOT NULL,
+  `produto_id` int NOT NULL,
   `nome` varchar(50) NOT NULL,
   `preco` decimal(10,2) NOT NULL,
-  `estoque_id` int(11) DEFAULT NULL,
+  `estoque_id` int DEFAULT NULL,
   `descricao` text,
   PRIMARY KEY (`produto_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `produtos`
---
 
 LOCK TABLES `produtos` WRITE;
 /*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
@@ -213,26 +152,18 @@ INSERT INTO `produtos` VALUES (1,'Maçã',1.99,1,'Fruta'),(2,'Banana',0.99,1,'Fr
 /*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `seccao`
---
-
 DROP TABLE IF EXISTS `seccao`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `seccao` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `id` bigint NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) NOT NULL,
-  `descrição` text,
-  `gerente_id` bigint(20) DEFAULT NULL,
+  `descricao` text,
+  `gerente_id` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `gerente_id` (`gerente_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `seccao`
---
 
 LOCK TABLES `seccao` WRITE;
 /*!40000 ALTER TABLE `seccao` DISABLE KEYS */;
@@ -248,5 +179,3 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2023-06-20 17:56:53
