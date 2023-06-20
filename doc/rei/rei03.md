@@ -15,7 +15,7 @@ Modelo E/A
 3. Produto
 4. Funcionário
 5. Formação
-6. Seccao
+6. Secção
 
 ### Associações
 
