@@ -39,13 +39,7 @@ Temos vários fornecedores, como:
 
 # Descrição do Trabalho
 
-Relativamente aos funcionários, eles têm uma respetiva área de trabalho, nome, morada, número, telefone e o seu horário de trabalho.
-
-Respetiva área de trabalho dos funcionários:
-
-- Caixa (nome, morada, número, telefone);
-- Repositor (nome, morada, número telefone);
-- Atendente (nome, morada, número, telefone);
+Relativamente aos funcionários, eles têm um nome, morada, número, telefone e o seu turno de trabalho, além disto têm uma secção de trabalho definida.
 
 
 # Descrição do Trabalho
@@ -136,15 +130,6 @@ Entidade Produto:
 - Origem
 - *Código de Barras* (identificador único)
 
-# Descrição do Trabalho
-
-Entidade Despesa:
-
-- *ID* (identificador único)
-- ID Cliente
-- Valor
-- Data
-- Descrição
 
 # Descrição do Trabalho
 
@@ -175,7 +160,7 @@ A nossa Mercearia vai utilizar a base de dados para o número de funcionário qu
 
 ## Modelo E/A
 
-![Modelo E/A](image01.png)
+![Modelo E/A](Diagram1.png){width=400px}
 
 
 # Entidades
