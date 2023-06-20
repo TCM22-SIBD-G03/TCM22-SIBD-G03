@@ -54,7 +54,7 @@ Para cada funcionário, adicionamos também os seus detalhes de formação ou ex
 
 Assim, o modelo de dados fica definido da seguinte forma:
 
-Entidade Cliente:
+Entidade Clientes:
 
 - *ID* (identificador único)
 - Nome
@@ -69,9 +69,9 @@ Entidade Fornecedor:
 
 - *ID* (identificador único)
 - Nome
-- Contacto específico
-- Loja/ Armazém específico
-- Endereço eletrónico
+- Telefone
+- Empresa
+- Email
 
 Entidade Funcionário:
 
@@ -89,6 +89,21 @@ Entidade Produto:
 - Preço
 - Origem
 - *Código de Barras* (identificador único)
+
+  Entidade Despesa:
+  - *ID* (identificador único)
+  - ID Cliente
+  - Valor
+  - Data
+  - Descrição
+ 
+  Entidade Seçção:
+  - ID
+  - Nome
+  - Descrição
+
+
+    
 
 
 
