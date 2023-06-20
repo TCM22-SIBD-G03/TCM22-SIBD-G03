@@ -24,7 +24,7 @@ Modelo E/A
 3. negoceia
 4. armazena
 5. exerce
-
+6. trabalha
 
 ## Regras de negócio adicionais (Restrições)
 
