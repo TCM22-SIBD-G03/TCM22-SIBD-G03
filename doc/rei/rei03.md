@@ -56,6 +56,9 @@ Modelo E/A
    - A formação de um funcionário deve estar associada a um funcionário existente.
    - A experiência de um funcionário deve estar associada a um funcionário existente.
 
+6. Secço:
+   - Cada Funcionário deve Trabalha em uma seccao.
+
 Regras de associação adicionais:
 
 1. Atende:
@@ -82,6 +85,10 @@ Regras de associação adicionais:
    - Um funcionário pode exercer várias formações.
    - Uma formação pode ser exercida por vários funcionários.
    - A associação "exerce" representa a formação exercida por um funcionário.
+
+6. Trabalha:
+  - Um funcionário pode trabalhar em uma seccão.
+  - A associação "trabalha" representa a seccao onde cada trabalhador trabalha.   
 
 Essas regras de negócio adicionais e restrições ajudam a garantir a integridade e consistência dos dados no sistema de informação da mercearia, além de definir os relacionamentos e limitações entre as entidades e associações. É importante considerar essas regras ao projetar e desenvolver o sistema.
 ---
