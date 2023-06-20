@@ -12,13 +12,7 @@ Temos vários fornecedores, como:
 - Fornecedor de Carne e Peixe é a empresa Sabor do Mar que é responsável pela venda e transporte dessas possíveis mercadorias mensais que tem um contacto específico, loja específica e o endereço eletrónico;
 - Fornecedor de Produtos Lácteos e Queijos que é a empresa Leite Saudável que é responsável pela venda e transporte dessas possíveis mercadorias mensais que tem um contacto específico, loja específica e o endereço eletrónico;
 
-Relativamente aos funcionários, eles têm uma respetiva área de trabalho, nome, morada, número, telefone e o seu horário de trabalho.
-
-Respetiva área de trabalho dos funcionários:
-
-- Caixa (nome, morada, número, telefone);
-- Repositor (nome, morada, número telefone);
-- Atendente (nome, morada, número, telefone);
+Relativamente aos funcionários, eles têm um nome, morada, número, telefone e o seu turno de trabalho, além disto têm uma secção de trabalho definida.
 
 Temos 20 clientes que são:
 
