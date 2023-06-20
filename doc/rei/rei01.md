@@ -84,13 +84,6 @@ Entidade Produto:
 - Origem
 - *Código de Barras* (identificador único)
 
-  Entidade Despesa:
-  - *ID* (identificador único)
-  - ID Cliente
-  - Valor
-  - Data
-  - Descrição
- 
   Entidade Seçção:
   - ID
   - Nome
